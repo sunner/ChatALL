@@ -183,7 +183,10 @@ export default class Bot {
       }
     } catch (err) {
       console.error(`Error send prompt to ${this.getFullname()}:`, err);
-      onUpdateResponse(callbackParam, { content: err.toString(), done: true }); // Make sure stop loading
+      onUpdateResponse(callbackParam, {
+        content: this.wrapCollapsedSection(err),
+        done: true,
+      }); // Make sure stop loading
     }
   }
 
@@ -230,5 +233,18 @@ export default class Bot {
       botClassname: this.getClassname(),
       context,
     });
+  }
+
+  wrapCollapsedSection(text) {
+    // replace line break with <br/>
+    text = text?.toString()?.replace(/[\r\n]+/g, "<br/>");
+    return `<details open>
+              <summary>Error</summary>
+              <pre class="error">${text}</pre>
+            </details>`;
+  }
+
+  getSSEDisplayError(event) {
+    return `${event?.source?.xhr?.status}\n${event?.source?.xhr?.response}`;
   }
 }

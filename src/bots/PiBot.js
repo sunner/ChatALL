@@ -79,7 +79,7 @@ export default class PiBot extends Bot {
         });
         source.addEventListener("error", (event) => {
           console.error(event);
-          reject(new Error(event));
+          reject(this.getSSEDisplayError(event));
         });
         source.stream();
       } catch (err) {
