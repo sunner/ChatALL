@@ -108,6 +108,7 @@ import PoeBotSettings from "@/components/BotSettings/PoeBotSettings.vue";
 import SkyWorkBotSettings from "@/components/BotSettings/SkyWorkBotSettings.vue";
 import YouChatBotSettings from "@/components/BotSettings/YouChatBotSettings.vue";
 import PiBotSettings from "@/components/BotSettings/PiBotSettings.vue";
+import Qihoo360BrianBotSettings from "./BotSettings/Qihoo360BrianBotSettings.vue";
 
 import { resolveTheme, applyTheme, Mode } from "../theme";
 
@@ -134,6 +135,7 @@ const botSettings = [
   { brand: "pi", component: PiBotSettings },
   { brand: "poe", component: PoeBotSettings },
   { brand: "qianWen", component: QianWenBotSettings },
+  { brand: "qihoo360", component: Qihoo360BrianBotSettings },
   { brand: "skyWork", component: SkyWorkBotSettings },
   { brand: "spark", component: SparkBotSettings },
   { brand: "wenxinQianfan", component: WenxinQianfanBotSettings },
