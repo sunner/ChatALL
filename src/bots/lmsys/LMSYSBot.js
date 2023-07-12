@@ -40,7 +40,7 @@ export default class LMSYSBot extends GradioBot {
     if (errorMsg.includes("REFRESH THIS PAGE")) {
       errorMsg = errorMsg.replace(
         "REFRESH THIS PAGE",
-        `<a href="${this.constructor._loginUrl}" target="innerWindow">REFRESH THIS PAGE</a>`,
+        `\n<a href="${this.constructor._loginUrl}" target="innerWindow">REFRESH THIS PAGE</a>`,
       );
     }
     return errorMsg;

@@ -118,7 +118,7 @@ export default class QianWenBot extends Bot {
 
         source.addEventListener("error", (event) => {
           console.error(event);
-          reject(new Error(event));
+          reject(this.getSSEDisplayError(event));
         });
 
         source.stream();
