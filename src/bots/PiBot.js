@@ -1,6 +1,6 @@
 import Bot from "@/bots/Bot";
+import i18n from "@/i18n";
 import AsyncLock from "async-lock";
-import axios from "axios";
 import { SSE } from "sse.js";
 
 export default class PiBot extends Bot {
@@ -20,15 +20,7 @@ export default class PiBot extends Bot {
    * @sideeffect - Set this.constructor._isAvailable
    */
   async checkAvailability() {
-    await axios
-      .get("https://heypi.com/api/chat/history")
-      .then(() => {
-        this.constructor._isAvailable = true;
-      })
-      .catch((error) => {
-        console.error("Error Pi check login:", error);
-        this.constructor._isAvailable = false;
-      });
+    this.constructor._isAvailable = true;
     return this.isAvailable(); // Always return like this
   }
 
@@ -68,7 +60,7 @@ export default class PiBot extends Bot {
           }
         });
         source.addEventListener("readystatechange", (event) => {
-          if (event.readyState === 2) {
+          if (event.readyState === source.CLOSED) {
             // after stream closed, done
             onUpdateResponse(callbackParam, {
               content: text,
@@ -79,7 +71,17 @@ export default class PiBot extends Bot {
         });
         source.addEventListener("error", (event) => {
           console.error(event);
-          reject(new Error(event));
+          if (event?.source?.xhr?.status === 401) {
+            reject(
+              new Error(
+                `${i18n.global.t("pi.waitPiIntro")}<br/><a href="${
+                  this.constructor._loginUrl
+                }" target="innerWindow">${this.constructor._loginUrl}</a>`,
+              ),
+            );
+          } else {
+            reject(new Error(event));
+          }
         });
         source.stream();
       } catch (err) {

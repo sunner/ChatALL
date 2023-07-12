@@ -156,7 +156,8 @@
     "name": "YouChat"
   },
   "pi": {
-    "name": "Pi"
+    "name": "Pi",
+    "waitPiIntro": "Please click the chatbot website link below and wait for the Pi introduction to finish, then close the window."
   },
   "dev": {
     "name": "Dev Bot"
