@@ -184,6 +184,7 @@
     "gpt-35-turbo": "gpt-3.5-turbo",
     "gpt-35-turbo-16k": "gpt-3.5-turbo-16k",
     "gpt-4": "gpt-4",
+    "gpt-4-1106-preview": "gpt-4-1106-preview",
     "temperature": "Temperature",
     "temperaturePrompt": "Temperature 越高，生成的文本越有创造性，但也越没条理",
     "temperature0": "更具确定性",
