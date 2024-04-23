@@ -1,16 +1,16 @@
 "use strict";
 
 import { BrowserWindow, app, ipcMain, nativeTheme, protocol } from "electron";
-import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
 import fs from "fs";
 import path from "path";
+import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 import { setMenuItems } from "./menu";
 import updateApp from "./update";
+import { sendPhind } from "./windows/phind/phind";
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 const DEFAULT_USER_AGENT = ""; // Empty string to use the Electron default
-let mainWindow = null;
 
 // start - makes  application a Single Instance Application
 const singleInstanceLock = app.requestSingleInstanceLock();
@@ -19,9 +19,9 @@ if (!singleInstanceLock) {
 } else {
   app.on("second-instance", () => {
     // Someone tried to run a second instance, we should focus our window.
-    if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore();
-      mainWindow.focus();
+    if (global.mainWindow) {
+      if (global.mainWindow.isMinimized()) global.mainWindow.restore();
+      global.mainWindow.focus();
     }
   });
 }
@@ -157,7 +157,7 @@ async function createWindow() {
     },
   });
 
-  mainWindow = win;
+  global.mainWindow = win;
 
   // Force the SameSite attribute to None for all cookies
   // This is required for the cross-origin request to work
@@ -295,34 +295,37 @@ function createNewWindow(url, userAgent = "") {
       if (url.startsWith("https://moss.fastnlp.top/")) {
         // Get the secret of MOSS
         const secret = await getLocalStorage("flutter.token");
-        mainWindow.webContents.send("moss-secret", secret);
+        global.mainWindow.webContents.send("moss-secret", secret);
       } else if (url.startsWith("https://qianwen.aliyun.com/")) {
         // Get QianWen bot's XSRF-TOKEN
         const token = await getCookie("XSRF-TOKEN");
-        mainWindow.webContents.send("QIANWEN-XSRF-TOKEN", token);
+        global.mainWindow.webContents.send("QIANWEN-XSRF-TOKEN", token);
       } else if (url.startsWith("https://chat.tiangong.cn/")) {
         // Get the tokens of SkyWork
         const inviteToken = await getLocalStorage("aiChatQueueWaitToken");
         const token = await getLocalStorage("aiChatResearchToken");
-        mainWindow.webContents.send("SKYWORK-TOKENS", { inviteToken, token });
+        global.mainWindow.webContents.send("SKYWORK-TOKENS", {
+          inviteToken,
+          token,
+        });
       } else if (url.startsWith("https://character.ai/")) {
         const token = await getLocalStorage("char_token");
-        mainWindow.webContents.send("CHARACTER-AI-TOKENS", token);
+        global.mainWindow.webContents.send("CHARACTER-AI-TOKENS", token);
       } else if (url.startsWith("https://claude.ai/")) {
         const org = await getCookie("lastActiveOrg");
-        mainWindow.webContents.send("CLAUDE-2-ORG", org);
+        global.mainWindow.webContents.send("CLAUDE-2-ORG", org);
       } else if (url.startsWith("https://poe.com/")) {
         const formkey = await newWin.webContents.executeJavaScript(
           "window.ereNdsRqhp2Rd3LEW();",
         );
-        mainWindow.webContents.send("POE-FORMKEY", formkey);
+        global.mainWindow.webContents.send("POE-FORMKEY", formkey);
       } else if (url.startsWith("https://chatglm.cn/")) {
         const token = await getCookie("chatglm_token");
-        mainWindow.webContents.send("CHATGLM-TOKENS", { token });
+        global.mainWindow.webContents.send("CHATGLM-TOKENS", { token });
       } else if (url.startsWith("https://kimi.moonshot.cn/")) {
         const access_token = await getLocalStorage("access_token");
         const refresh_token = await getLocalStorage("refresh_token");
-        mainWindow.webContents.send("KIMI-TOKENS", {
+        global.mainWindow.webContents.send("KIMI-TOKENS", {
           access_token,
           refresh_token,
         });
@@ -333,12 +336,13 @@ function createNewWindow(url, userAgent = "") {
 
     newWin.destroy(); // Destroy the window manually
     // Tell renderer process to check aviability
-    mainWindow.webContents.send("CHECK-AVAILABILITY", url);
+    global.mainWindow.webContents.send("CHECK-AVAILABILITY", url);
   });
+  return newWin;
 }
 
 async function getCookies(filter) {
-  const cookies = await mainWindow.webContents.session.cookies.get({
+  const cookies = await global.mainWindow.webContents.session.cookies.get({
     ...filter,
   });
   return cookies;
@@ -346,6 +350,26 @@ async function getCookies(filter) {
 
 ipcMain.handle("create-new-window", (event, url, userAgent) => {
   createNewWindow(url, userAgent);
+});
+
+/** @type {Object<string, BrowserWindow>}*/
+const windows = {};
+ipcMain.handle("create-chat-window", async (event, options) => {
+  const { winName, url, userAgent } = options;
+  switch (winName) {
+    case "phind":
+      const win = createNewWindow(url, userAgent);
+      windows[winName] = win;
+      await sendPhind({ win, ...options });
+      break;
+    default:
+      break;
+  }
+});
+
+ipcMain.handle("close-chat-window", (event, winName) => {
+  windows[winName]?.close();
+  windows[winName] = undefined;
 });
 
 ipcMain.handle("get-native-theme", () => {
@@ -389,7 +413,7 @@ ipcMain.handle("save-proxy-and-restart", async () => {
 // Proxy Setting End
 
 ipcMain.handle("set-is-show-menu-bar", (_, isShowMenuBar) => {
-  mainWindow.setMenuBarVisibility(isShowMenuBar);
+  global.mainWindow.setMenuBarVisibility(isShowMenuBar);
 });
 
 ipcMain.handle("get-cookies", async (event, filter) => {
@@ -397,7 +421,7 @@ ipcMain.handle("get-cookies", async (event, filter) => {
 });
 
 nativeTheme.on("updated", () => {
-  mainWindow.webContents.send("on-updated-system-theme");
+  global.mainWindow.webContents.send("on-updated-system-theme");
 });
 
 // Quit when all windows are closed.

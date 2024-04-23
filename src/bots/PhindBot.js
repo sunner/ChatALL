@@ -1,5 +1,4 @@
 import Bot from "@/bots/Bot";
-import store from "@/store";
 import AsyncLock from "async-lock";
 import axios from "axios";
 import { SSE } from "sse.js";
@@ -22,7 +21,16 @@ export default class PhindBot extends Bot {
    * @returns {boolean} - true if the bot is available, false otherwise.
    */
   async _checkAvailability() {
-    return true;
+    try {
+      const response = await axios.get(
+        "https://www.phind.com/api/auth/session",
+      );
+      if (response?.data?.user?.userId) {
+        return true;
+      }
+    } catch (error) {
+      console.error("Error PhindBot check login:", error);
+    }
   }
 
   /**
@@ -33,155 +41,96 @@ export default class PhindBot extends Bot {
    * @param {object} callbackParam - Just pass it to onUpdateResponse() as is
    */
   async _sendPrompt(prompt, onUpdateResponse, callbackParam) {
-    try {
-      const context = await this.getChatContext();
-      const rewrite = await axios.post(
-        "https://www.phind.com/api/infer/followup/rewrite",
-        {
-          questionToRewrite: prompt,
-          questionHistory: context.questionHistory,
-          answerHistory: context.answerHistory,
-        },
-      );
-      const search = await axios.post("https://www.phind.com/api/web/search", {
-        q: rewrite.data.query,
-        browserLanguage: "en-GB",
-        userSearchRules: {},
-      });
-
-      const date = new Date();
-      const formatDate = this.getFormattedDate(date);
-      const payload = JSON.stringify({
-        questionHistory: context.questionHistory,
-        answerHistory: context.answerHistory,
-        question: prompt,
-        webResults: search.data,
-        options: {
-          date: formatDate,
-          language: "en-GB",
-          detailed: true,
-          anonUserId: await this.getUUID(),
-          answerModel: store.state.phind.model,
-          customLinks: [],
-        },
-        context: "",
-      });
-
-      return new Promise((resolve, reject) => {
-        try {
-          const source = new SSE("https://www.phind.com/api/infer/answer", {
-            start: false,
-            payload,
-          });
-          let text = "";
-          let isSuccess = false;
-          source.addEventListener("message", (event) => {
-            if (event.data) {
-              if (event.data.startsWith("<PHIND_METADATA>")) {
-                isSuccess = true;
-              } else {
-                text += event.data;
-                onUpdateResponse(callbackParam, {
-                  content: text,
-                  done: false,
-                });
-              }
-            }
-          });
-
-          source.addEventListener("readystatechange", (event) => {
-            if (event.readyState === source.CLOSED) {
-              // after stream closed, done
-              if (isSuccess) {
-                // save answerHistory and questionHistory to context
-                this.setChatContext({
-                  answerHistory: [...context.answerHistory, text],
-                  questionHistory: [...context.questionHistory, prompt],
-                });
-
-                // replace link with hostname
-                if (search.data && search.data.length) {
-                  for (let i = 0; i < search.data.length; i++) {
-                    const hostname = new URL(search.data[i].url).hostname;
-                    text = text.replaceAll(`[Source${i}]`, `[${hostname}]`);
-                    text = text.replaceAll(
-                      `[^${i}^]`,
-                      ` [${hostname}](${search.data[i].url})`,
-                    );
-                    text = text.replaceAll(
-                      `^${i}^`,
-                      ` [${hostname}](${search.data[i].url})`,
-                    );
-                  }
+    /** @type {{ message_history: Array }}*/
+    const context = await this.getChatContext();
+    ipcRenderer.invoke("create-chat-window", {
+      prompt,
+      winName: PhindBot._brandId,
+      url: `https://www.phind.com/agent${context.chatId ? `?cache=${context.chatId}` : ""}`,
+    });
+    const onPhindRequest = (_, postData, text, resolve, reject) => {
+      try {
+        const source = new SSE("https://https.api.phind.com/agent/", {
+          start: false,
+          payload: postData,
+        });
+        source.addEventListener("message", (event) => {
+          if (event.data) {
+            /** @type {{ "created": number, "model": string, "choices": [ { "index": number, "delta": { "role": string, "content": string } } ] }} */
+            const response = JSON.parse(event.data);
+            if (response && response.choices && response.choices.length) {
+              for (const choice of response.choices) {
+                if (choice.delta && choice.delta.content) {
+                  text += choice.delta.content;
                 }
               }
               onUpdateResponse(callbackParam, {
                 content: text,
-                done: true,
               });
-              resolve();
             }
-          });
-          source.addEventListener("error", (event) => {
-            console.error(event);
-            reject(this.getSSEDisplayError(event));
-          });
+          }
+        });
 
-          // override default _onStreamProgress to fix missing new line in response due to trimming
-          source._onStreamProgress = function (e) {
-            if (!source.xhr) {
-              return;
-            }
-
-            if (source.xhr.status !== 200) {
-              source._onStreamFailure(e);
-              return;
-            }
-
-            if (source.readyState == source.CONNECTING) {
-              source.dispatchEvent(new CustomEvent("open"));
-              source._setReadyState(source.OPEN);
-            }
-
-            var data = source.xhr.responseText.substring(source.progress);
-
-            source.progress += data.length;
-            var parts = (source.chunk + data).split(/\r\n\r\n/);
-            var lastPart = parts.pop();
-            for (let part of parts) {
-              // skip if data is empty
-              if (part === "data: ") {
-                continue;
-              }
-
-              // newline
-              if (part === "data: \r\ndata: ") {
-                let event = new CustomEvent("message");
-                event.data = "\n";
-                source.dispatchEvent(event);
-                continue;
-              }
-
-              const event = source._parseEventChunk(part);
-              source.dispatchEvent(event);
-            }
-            source.chunk = lastPart;
-          };
-          source.stream();
-        } catch (err) {
-          reject(err);
-        }
-      });
-    } catch (error) {
-      if (error.request.status === 403) {
-        throw new Error(
-          `${error.request.status} ${error.request.responseText}`,
-        );
-      } else {
-        console.error("Error PhindBot _sendPrompt:", error);
-        throw error;
+        source.addEventListener("readystatechange", (event) => {
+          if (event.readyState === source.CLOSED) {
+            context.message_history.push({
+              role: "user",
+              content: prompt,
+              metadata: {},
+            });
+            context.message_history.push({
+              role: "assistant",
+              content: text,
+              metadata: {},
+            });
+            this.setChatContext({
+              ...context,
+              message_history: context.message_history,
+            });
+            onUpdateResponse(callbackParam, {
+              content: text,
+              done: true,
+            });
+            resolve();
+          }
+        });
+        source.addEventListener("error", (event) => {
+          console.error(event);
+          reject(this.getSSEDisplayError(event));
+        });
+        source.stream();
+      } catch (err) {
+        reject(err);
       }
-    }
+    };
+
+    let text = "";
+    return new Promise((resolve, reject) => {
+      ipcRenderer.once("phind-request", (_, postData) =>
+        onPhindRequest(_, postData, text, resolve, reject),
+      );
+    })
+      .then(async () => {
+        ipcRenderer.invoke("close-chat-window", PhindBot._brandId);
+        let response;
+        if (context.chatId) {
+          response = await axios.put("https://www.phind.com/api/db/chat", {
+            chatId: context.chatId,
+            messages: context.message_history?.slice(-2),
+          });
+        } else {
+          response = await axios.post("https://www.phind.com/api/db/chat", {
+            title: prompt,
+            messages: context.message_history?.slice(-2),
+          });
+          context.chatId = response.data;
+          this.setChatContext(context);
+        }
+      })
+      .catch((error) => {
+        console.error("Operation failed:", error);
+        ipcRenderer.invoke("close-chat-window", PhindBot._brandId);
+      });
   }
 
   /**
@@ -191,21 +140,6 @@ export default class PhindBot extends Bot {
    * @returns {any} - Conversation structure. null if not supported.
    */
   async createChatContext() {
-    return { answerHistory: [], questionHistory: [] };
-  }
-
-  getFormattedDate(date) {
-    let year = date.getFullYear();
-    let month = (1 + date.getMonth()).toString().padStart(2, "0");
-    let day = date.getDate().toString().padStart(2, "0");
-    return month + "/" + day + "/" + year;
-  }
-
-  async getUUID() {
-    const cookies = await ipcRenderer.invoke("get-cookies", {
-      domain: "www.phind.com",
-    });
-    const uuidCookie = cookies.find((cookie) => cookie.name === "uuid");
-    return uuidCookie ? uuidCookie.value : "";
+    return { message_history: [], chatId: undefined };
   }
 }

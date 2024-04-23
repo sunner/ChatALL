@@ -112,9 +112,7 @@ export default createStore({
       topP: 0.9,
       repetitionPenalty: 1.2,
     },
-    phind: {
-      model: "Phind Model",
-    },
+    phind: {},
     currentChatIndex: 0,
     updateCounter: 0,
     theme: undefined,
