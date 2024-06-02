@@ -15,7 +15,7 @@
     "light": "밝은",
     "dark": "어두운",
     "bots": "AI 봇",
-    "showMenuBar": "메뉴 바 표시"
+    "showMenuBar": "메뉴 표시줄 표시"
   },
   "common": {
     "apiKey": "API 키"
@@ -38,6 +38,9 @@
     "free": "무료",
     "paid": "유료",
     "api": "API"
+    "enableAll": "모두 사용함",
+    "disableAll": "모두 사용 안 함",
+    "removeAll": "모두 제거"
   },
   "error": {
     "error": "오류",
@@ -122,21 +125,30 @@
     "gemini-pro": "Gemini",
     "gemini-ultra": "Gemini 고급"
   },
+  "claudeApi": {
+    "name": "Claude API",
+    "claude-3-opus-20240229": "claude-3-opus",
+    "claude-3-sonnet-20240229": "claude-3-sonnet",
+    "claude-3-haiku-20240307": "claude-3-haiku",
+    "claude-21": "claude-2.1",
+    "claude-20": "claude-2.0",
+    "claude-instant-12": "claude-instant"
+  },
+  "cohereApi": {
+    "name": "Cohere API",
+    "command": "명령",
+    "command-light": "명령 라이트",
+    "command-r": "Command R",
+    "command-r-plus": "Command R+",
+    "temperature": "온도",
+    "temperaturePrompt": "모델 출력의 무작위성 설정은 0에서 5까지입니다. 낮은 설정값은 요약 작성과 같이 정확한 정보가 필요한 작업에 적합하며, 출력의 정확성과 일관성을 보장합니다. 반면, 높은 설정값은 창의성을 촉진하지만 특정 상황이나 간단한 응답에서는 일관성이 떨어질 수 있습니다."
+  },
   "bingChat": {
     "name": "Copilot",
     "solveCaptcha": "계속하려면 <a { attributes }>CAPTCHA를 해결</a>해야 합니다.",
     "h3imaginative": "창의적인",
     "galileo": "균형 있는",
     "h3precise": "정밀한"
-  },
-  "cohereApi": {
-    "name": "Cohere API",
-    "command": "Command",
-    "command-light": "Command Light",
-    "command-r": "Command R",
-    "command-r-plus": "Command R+",
-    "temperature": "온도",
-    "temperaturePrompt": "모델 출력의 무작위성 설정은 0에서 5까지입니다. 낮은 설정값은 요약 작성과 같이 정확한 정보가 필요한 작업에 적합하며, 출력의 정확성과 일관성을 보장합니다. 반면, 높은 설정값은 창의성을 촉진하지만 특정 상황이나 간단한 응답에서는 일관성이 떨어질 수 있습니다."
   },
   "characterAI": {
     "name": "Character.AI"
@@ -183,6 +195,11 @@
     "urlPrompt": "Gradio 앱의 URL입니다. Hugging Face 공간을 사용하는 경우 오른쪽 상단 모서리의 \"Embed this space\"를 클릭하여 직접 URL을 가져옵니다.",
     "waiting": "대기열에 {queue_size}개의 요청이 있으며 {rank} 위에 있으며 {queue_eta}초 동안 기다려야 합니다"
   },
+  "kimi": {
+    "name": "Kimi",
+    "found": "찾음 {num}: ",
+    "searching": "검색 중..."
+  },
   "lmsys": {
     "name": "LMSYS",
     "vicuna-7b": "vicuna-7b",
@@ -198,7 +215,14 @@
     "codellama-34b-instruct": "Code Llama",
     "llama-2-13b-chat": "llama-2-13b",
     "llama-2-7b-chat": "llama-2-7b",
-    "llama-2-70b-chat": "llama-2-70b"
+    "llama-2-70b-chat": "llama-2-70b",
+    "gemma-7b-it": "gemma-7b-it",
+    "gemma-2b-it": "gemma-2b-it",
+    "claude-3-sonnet-20240229": "claude-3-sonnet-20240229",
+    "claude-3-opus-20240229": "claude-3-opus-20240229"
+  },
+  "mistral": {
+    "name": "Mistral"
   },
   "moss": {
     "name": "MOSS"
@@ -249,7 +273,9 @@
     "name": "YouChat"
   },
   "chatGlm": {
-    "name": "ChatGLM"
+    "name": "ChatGLM",
+    "GLM-3": "GLM-3",
+    "GLM-4": "GLM-4"
   },
   "pi": {
     "name": "Pi",
@@ -261,7 +287,7 @@
     "temperature": "온도",
     "temperaturePrompt": "값이 높을수록 보다 다양한 결과물을 생성합니다",
     "maxNewTokens": "새 토큰 최대 수",
-    "maxNewTokensPrompt": "새 토큰의 최대 개수",
+    "maxNewTokensPrompt": "새 토큰의 최대 수",
     "topP": "Top-p (핵 표본 추출)",
     "topPPrompt": "값이 높을수록 더 많은 저확률 토큰 표본 추출",
     "repetitionPenalty": "반복 페널티",
@@ -269,6 +295,9 @@
   },
   "phind": {
     "name": "Phind"
+  },
+  "perplexity": {
+    "name": "Perplexity"
   },
   "dev": {
     "name": "Dev Bot"
