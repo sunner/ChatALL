@@ -208,7 +208,6 @@
     "alterUrl": "대체 기본 URL",
     "alterUrlPrompt": "API 요청의 기본 URL 경로, 프록시 또는 서비스 에뮬레이터를 사용하지 않는 경우 비워 두십시오",
     "gpt-35-turbo": "gpt-3.5-터보",
-    "gpt-35-turbo-16k": "gpt-3.5-터보-16k",
     "gpt-4": "gpt-4",
     "gpt-4-turbo": "gpt-4-turbo",
     "gpt-4o": "gpt-4o",

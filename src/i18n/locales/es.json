@@ -160,7 +160,6 @@
     "alterUrl": "URL base alternativa",
     "alterUrlPrompt": "Ruta de URL base para solicitudes de API, déjela en blanco si no usa un proxy o emulador de servicios",
     "gpt-35-turbo": "GPT-3.5-turbo",
-    "gpt-35-turbo-16k": "GPT-3.5-Turbo-16K",
     "gpt-4": "GPT-4",
     "gpt-4-turbo": "gpt-4-turbo",
     "gpt-4o": "gpt-4o",

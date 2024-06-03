@@ -232,7 +232,6 @@
     "alterUrl": "自定义基础 URL",
     "alterUrlPrompt": "API 请求的基础 URL 路径。如果没有使用代理或服务模拟器，就留空",
     "gpt-35-turbo": "gpt-3.5-turbo",
-    "gpt-35-turbo-16k": "gpt-3.5-turbo-16k",
     "gpt-4": "gpt-4",
     "gpt-4-turbo": "gpt-4-turbo",
     "gpt-4o": "gpt-4o",
