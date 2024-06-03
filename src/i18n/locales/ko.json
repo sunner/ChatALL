@@ -18,7 +18,7 @@
     "showMenuBar": "메뉴 표시줄 표시"
   },
   "common": {
-    "apiKey": "API 키"
+    "apiKey": "API 키",
   },
   "header": {
     "clearMessages": "모든 메시지를 지우시겠습니까?",
