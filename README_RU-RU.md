@@ -35,6 +35,7 @@
 | [ChatGPT](https://chat.openai.com)                                             | Да                 | Да          | Просмотр веб-страниц, включая службу Azure OpenAI       |
 | [Claude](https://www.anthropic.com/claude)                                     | Да                 | Да          |                                                         |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Да                 | Нет         |                                                         |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Нет                | Да          |                                                         |
 | [Модели Cohere Command R](https://cohere.com/command)                          | Нет                | Да          |                                                         |
 | [Copilot](https://copilot.microsoft.com/)                                      | Да                 | Нет API     |                                                         |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Скоро будет        | Нет API     |                                                         |

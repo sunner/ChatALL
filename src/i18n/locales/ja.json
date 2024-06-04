@@ -88,6 +88,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "温度",
     "temperaturePrompt": "モデルの出力のランダム性の設定範囲は0から5です。低い設定値は、要約の作成など、正確な情報が必要なタスクに適しており、出力の精度と一貫性を保証します。一方、高い設定値は創造性を促進しますが、特定の状況や短い回答では一貫性が低下する可能性があります。"
   },

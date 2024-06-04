@@ -8,6 +8,7 @@ import CohereAPICommandBot from "@/bots/cohere/CohereAPICommandBot";
 import CohereAPICommandLightBot from "@/bots/cohere/CohereAPICommandLightBot";
 import CohereAPICommandRBot from "@/bots/cohere/CohereAPICommandRBot";
 import CohereAPICommandRPlusBot from "@/bots/cohere/CohereAPICommandRPlusBot";
+import CohereAPIAya23Bot from "@/bots/cohere/CohereAPIAya23Bot";
 import BingChatPreciseBot from "@/bots/microsoft/BingChatPreciseBot";
 import BingChatBalancedBot from "@/bots/microsoft/BingChatBalancedBot";
 import BingChatCreativeBot from "@/bots/microsoft/BingChatCreativeBot";
@@ -117,6 +118,7 @@ const all = [
   CohereAPICommandLightBot.getInstance(),
   CohereAPICommandRBot.getInstance(),
   CohereAPICommandRPlusBot.getInstance(),
+  CohereAPIAya23Bot.getInstance(),
   WenxinQianfanBot.getInstance(),
   WenxinQianfanTurboBot.getInstance(),
   WenxinQianfan4Bot.getInstance(),
@@ -311,6 +313,7 @@ export const botTags = {
     bots.getBotByClassName("CohereAPICommandLightBot"),
     bots.getBotByClassName("CohereAPICommandRBot"),
     bots.getBotByClassName("CohereAPICommandRPlusBot"),
+    bots.getBotByClassName("CohereAPIAya23Bot"),
     bots.getBotByClassName("Gemma7bGroqAPIBot"),
     bots.getBotByClassName("Llama270bGroqAPIBot"),
     bots.getBotByClassName("Llama38bGroqAPIBot"),

@@ -34,6 +34,7 @@ ChatALLのユーザーはこんな感じ：
 | [ChatGPT](https://chat.openai.com)                                            | はい        | あり       | ブラウジングを含む、Azure OpenAI service                 |
 | [Claude](https://www.anthropic.com/claude)                                    | はい        | あり       |                                                          |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/)| はい        | なし       |                                                          |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                | いいえ      | はい       |                                                          |
 | [Cohere Command R モデル](https://cohere.com/command)                          | いいえ      | はい       |                                                          |
 | [Copilot](https://copilot.microsoft.com/)                                     | はい        | なし       |                                                          |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                              | 近日登場    | なし       |                                                          |

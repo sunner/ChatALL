@@ -63,6 +63,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Temperatura",
     "temperaturePrompt": "L'impostazione della casualità delle risposte del modello varia da 0 a 5. Un valore più basso assicura precisione e coerenza nelle uscite, ideale per compiti che richiedono informazioni precise, come la redazione di riassunti. Al contrario, un valore più alto promuove la creatività, ma può ridurre la coerenza in contesti specifici o in risposte brevi."
   },

@@ -27,6 +27,7 @@ Les robots d'intelligence artificielle basés sur les grands modèles de langage
 | [ChatGPT](https://chat.openai.com)                                             | Oui           | Oui           | Navigation web, inclut services Azure OpenAI      |
 | [Claude](https://www.anthropic.com/claude)                                     | Oui           | Oui           |                                                   |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Oui           | Non           |                                                   |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Non           | Oui           |                                                   |
 | [Cohere Command R Models](https://cohere.com/command)                          | Non           | Oui           |                                                   |
 | [Copilot](https://copilot.microsoft.com/)                                      | Oui           | Non           |                                                   |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Prochainement | Non           |                                                   |

@@ -27,6 +27,7 @@ Các Chat bots AI dựa trên Mô hình ngôn ngữ lớn (Large Language Models
 | [ChatGPT](https://chat.openai.com)                                             | Có           | Có           | Bao gồm cả trình duyệt Web, Azure OpenAI service       |
 | [Claude](https://www.anthropic.com/claude)                                     | Có           | Có           |                                                       |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Có           | Không có     |                                                       |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Không        | Có           |                                                       |
 | [Các mô hình Cohere Command R](https://cohere.com/command)                     | Không        | Có           |                                                       |
 | [Copilot](https://copilot.microsoft.com/)                                      | Có           | Không có API |                                                       |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Sắp ra mắt   | Không có API |                                                       |

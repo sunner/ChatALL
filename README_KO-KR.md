@@ -35,6 +35,7 @@ ChatALL의 일반적인 사용자는 다음과 같습니다:
 | [ChatGPT](https://chat.openai.com)                                             | 예        | 예        | 웹 브라우징 포함, Azure OpenAI 서비스                 |
 | [Claude](https://www.anthropic.com/claude)                                     | 예        | 예        |                                                       |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | 예        | 없음      |                                                       |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | 아니오    | 예        |                                                       |
 | [Cohere Command R 모델](https://cohere.com/command)                            | 아니오    | 예        |                                                       |
 | [Copilot](https://copilot.microsoft.com/)                                      | 예        | 없음      |                                                       |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | 근일 개봉 | 없음      |                                                       |

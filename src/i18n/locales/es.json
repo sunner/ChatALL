@@ -122,6 +122,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Temperatura",
     "temperaturePrompt": "El ajuste de la aleatoriedad en las respuestas del modelo varía de 0 a 5. Un valor más bajo asegura precisión y consistencia en las salidas, ideal para tareas que requieren información exacta, como la elaboración de resúmenes. En cambio, un valor más alto fomenta la creatividad, aunque puede disminuir la coherencia en contextos específicos o respuestas breves."
   },

@@ -135,6 +135,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "온도",
     "temperaturePrompt": "모델 출력의 무작위성 설정은 0에서 5까지입니다. 낮은 설정값은 요약 작성과 같이 정확한 정보가 필요한 작업에 적합하며, 출력의 정확성과 일관성을 보장합니다. 반면, 높은 설정값은 창의성을 촉진하지만 특정 상황이나 간단한 응답에서는 일관성이 떨어질 수 있습니다."
   },

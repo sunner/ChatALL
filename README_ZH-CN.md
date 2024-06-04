@@ -35,6 +35,7 @@ ChatALL 的典型用户是：
 | [ChatGPT](https://chat.openai.com)                                             | 支持     | 支持     | 包含 Web Browsing、Azure OpenAI service    |
 | [Claude](https://www.anthropic.com/claude)                                     | 支持     | 支持     |                                            |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | 支持     | 无 API   |                                            |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | 否       | 支持     |                                            |
 | [Cohere Command R 系列模型](https://cohere.com/command)                        | 否       | 支持     |                                            |
 | [Copilot](https://copilot.microsoft.com/)                                      | 支持     | 无 API   |                                            |
 | [得到学习助手](https://ai.dedao.cn/)                                           | 即将推出 | 无 API   |                                            |

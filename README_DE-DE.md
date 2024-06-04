@@ -27,6 +27,7 @@ Auf großen Sprachmodellen (LLMs) basierende KI-Bots sind erstaunlich. Ihr Verha
 | [ChatGPT](https://chat.openai.com)                                             | Ja            | Ja            | Web-Browsing inklusive, Azure OpenAI Services          |
 | [Claude](https://www.anthropic.com/claude)                                     | Ja            | Ja            |                                                        |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Ja            | Nein          |                                                        |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Nein          | Ja            |                                                        |
 | [Cohere Command R Models](https://cohere.com/command)                          | Nein          | Ja            |                                                        |
 | [Copilot](https://copilot.microsoft.com/)                                      | Ja            | Nein          |                                                        |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Demnächst     | Nein          |                                                        |

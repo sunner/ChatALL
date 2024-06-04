@@ -56,6 +56,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Température",
     "temperaturePrompt": "Le réglage de l'aléatoire des sorties du modèle varie de 0 à 5. Des valeurs plus basses garantissent la précision et la cohérence des résultats, idéales pour des tâches nécessitant des informations précises, comme la rédaction de résumés. À l'inverse, des valeurs plus élevées stimulent la créativité mais peuvent réduire la cohérence dans des contextes spécifiques ou des réponses brèves."
   },

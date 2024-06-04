@@ -35,6 +35,7 @@ Los usuarios típicos de ChatALL son:
 | [ChatGPT](https://chat.openai.com)                                             | Sì            | Sì            | Navigazione Web, include servizi Azure OpenAI          |
 | [Claude](https://www.anthropic.com/claude)                                     | Sì            | Sì            |                                                        |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Sì            | No            |                                                        |
+| [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | No            | Sì            |                                                        |
 | [Modelos Cohere Command R](https://cohere.com/command)                         | No            | Sì            |                                                        |
 | [Copilot](https://copilot.microsoft.com/)                                      | Sì            | No            |                                                        |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Prossimamente | No            |                                                        |

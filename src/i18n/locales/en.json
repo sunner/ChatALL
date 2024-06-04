@@ -140,6 +140,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Temperature",
     "temperaturePrompt": "Adjust output randomness from 0 to 5. Lower temperatures ensure precise, consistent answers, suitable for tasks like summarization. Higher temperatures promote creativity but may reduce coherence, especially in brief or context-specific prompts."
   },

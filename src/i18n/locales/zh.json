@@ -140,6 +140,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Temperature",
     "temperaturePrompt": "调整模型的输出随机性设置范围为 0 至 5。较低的设置值能够确保输出结果的精确性和一致性，非常适合用于需要精确信息的任务，如撰写摘要。相反，较高的设置值则有助于激发创造性思维，但可能使内容在特定情境或简短回应中显得不够连贯。"
   },

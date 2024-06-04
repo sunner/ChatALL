@@ -131,6 +131,7 @@
     "command-light": "Command Light",
     "command-r": "Command R",
     "command-r-plus": "Command R+",
+    "c4ai-aya-23": "Aya 23",
     "temperature": "Temperature",
     "temperaturePrompt": "Thiết lập độ ngẫu nhiên của đầu ra mô hình từ 0 đến 5. Mức thấp đảm bảo độ chính xác và nhất quán của kết quả, rất phù hợp cho các nhiệm vụ cần thông tin chính xác, như biên soạn tóm tắt. Ngược lại, mức cao thúc đẩy sự sáng tạo nhưng có thể làm giảm tính nhất quán trong các bối cảnh cụ thể hoặc câu trả lời ngắn."
   },
