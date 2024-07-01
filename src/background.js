@@ -2,7 +2,7 @@
 
 import { BrowserWindow, app, ipcMain, nativeTheme, protocol } from "electron";
 import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
-import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
+import installExtension from "electron-devtools-installer";
 import fs from "fs";
 import path from "path";
 import { setMenuItems } from "./menu";
@@ -241,9 +241,7 @@ async function createWindow() {
 
       if (
         url.startsWith("https://character.ai/_next/data/") &&
-        /^https:\/\/character\.ai\/_next\/data\/.+\/index\.json/.test(
-          url,
-        )
+        /^https:\/\/character\.ai\/_next\/data\/.+\/index\.json/.test(url)
       ) {
         const parts = url.split("/");
         if (parts.length >= 6) {
@@ -441,7 +439,7 @@ app.on("ready", async () => {
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     try {
-      await installExtension(VUEJS3_DEVTOOLS);
+      await installExtension("nhdogjmejiglipccpnnnanhbledajbpd");
     } catch (e) {
       console.error("Vue Devtools failed to install:", e.toString());
     }
