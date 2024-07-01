@@ -303,7 +303,6 @@
   },
   "groqApi": {
     "name": "Groq API",
-    "llama2-70b-4096": "LLaMA2 70b",
     "llama3-8b-8192": "Llama 3 8b",
     "llama3-70b-8192": "Llama 3 70b",
     "mixtral-8x7b-32768": "Mixtral 8x7b",
