@@ -86,11 +86,14 @@ export default class SparkBot extends Bot {
           );
 
           let text = "";
+          let error = false;
           source.addEventListener("message", (event) => {
             if (event.data === "<end>") {
               onUpdateResponse(callbackParam, { done: true });
               source.close();
               resolve();
+            } else if (event.data === "[error]") {
+              error = true;
             } else if (event.data.slice(-5) === "<sid>") {
               // ignore <sid> message
               return;
@@ -111,6 +114,11 @@ export default class SparkBot extends Bot {
               }
               text += partialText;
               onUpdateResponse(callbackParam, { content: text, done: false });
+
+              // clear context if error
+              if (error) {
+                this.setChatContext(null);
+              }
             }
           });
 
