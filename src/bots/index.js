@@ -29,6 +29,7 @@ import ClaudeBot from "@/bots/lmsys/ClaudeBot";
 import DevBot from "@/bots/DevBot";
 import GradioAppBot from "@/bots/huggingface/GradioAppBot";
 import Gemma7bGroqAPIBot from "@/bots/groq/Gemma7bGroqAPIBot";
+import Gemma29bGroqAPIBot from "@/bots/groq/Gemma29bGroqAPIBot";
 import Llama38bGroqAPIBot from "@/bots/groq/Llama38bGroqAPIBot";
 import Llama370bGroqAPIBot from "@/bots/groq/Llama370bGroqAPIBot";
 import Mixtral8x7bGroqAPIBot from "@/bots/groq/Mixtral8x7bGroqAPIBot";
@@ -146,6 +147,7 @@ const all = [
   ChatGPT432kPoeBot.getInstance(),
   GradioAppBot.getInstance(),
   Gemma7bGroqAPIBot.getInstance(),
+  Gemma29bGroqAPIBot.getInstance(),
   Llama38bGroqAPIBot.getInstance(),
   Llama370bGroqAPIBot.getInstance(),
   Mixtral8x7bGroqAPIBot.getInstance(),
@@ -316,6 +318,7 @@ export const botTags = {
     bots.getBotByClassName("CohereAPICommandRPlusBot"),
     bots.getBotByClassName("CohereAPIAya23Bot"),
     bots.getBotByClassName("Gemma7bGroqAPIBot"),
+    bots.getBotByClassName("Gemma29bGroqAPIBot"),
     bots.getBotByClassName("Llama38bGroqAPIBot"),
     bots.getBotByClassName("Llama370bGroqAPIBot"),
     bots.getBotByClassName("Mixtral8x7bGroqAPIBot"),
