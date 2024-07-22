@@ -617,4 +617,9 @@ function pageRight() {
 .cursor-auto {
   cursor: auto;
 }
+
+.v-md-editor-preview {
+    max-height: 50vh;
+    overflow-y: overlay;
+}
 </style>
