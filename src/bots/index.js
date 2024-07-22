@@ -85,6 +85,8 @@ import ClaudeAPISonnetBot from "./anthropic/ClaudeAPISonnetBot";
 import ClaudeAPI35SonnetBot from "./anthropic/ClaudeAPI35SonnetBot";
 import ClaudeAPIHaikuBot from "./anthropic/ClaudeAPIHaikuBot";
 import ClaudeAPIInstant12Bot from "./anthropic/ClaudeAPIInstant12Bot";
+import DeepSeekAPICoderBot from "./deepseek/DeepSeekAPICoderBot";
+import DeepSeekAPIChatBot from "./deepseek/DeepSeekAPIChatBot";
 
 const all = [
   Qihoo360AIBrainBot.getInstance(),
@@ -172,6 +174,8 @@ const all = [
   Wizardlm70bBot.getInstance(),
   Zephyr7bBot.getInstance(),
   YouChatBot.getInstance(),
+  DeepSeekAPICoderBot.getInstance(),
+  DeepSeekAPIChatBot.getInstance(),
 ];
 
 const disabled = [
@@ -289,6 +293,8 @@ export const botTags = {
     bots.getBotByClassName("Gemma7bItBot"),
     bots.getBotByClassName("Claude3SonnetBot"),
     bots.getBotByClassName("Claude3OpusBot"),
+    bots.getBotByClassName("DeepSeekAPICoderBot"),
+    bots.getBotByClassName("DeepSeekAPIChatBot"),
   ],
   api: [
     bots.getBotByClassName("GeminiAPIBot"),
@@ -319,6 +325,8 @@ export const botTags = {
     bots.getBotByClassName("Llama38bGroqAPIBot"),
     bots.getBotByClassName("Llama370bGroqAPIBot"),
     bots.getBotByClassName("Mixtral8x7bGroqAPIBot"),
+    bots.getBotByClassName("DeepSeekAPICoderBot"),
+    bots.getBotByClassName("DeepSeekAPIChatBot"),
   ],
   madeInChina: [
     bots.getBotByClassName("Qihoo360AIBrainBot"),
@@ -334,6 +342,8 @@ export const botTags = {
     bots.getBotByClassName("ChatGLM6bBot"),
     bots.getBotByClassName("ChatGLM36bBot"),
     bots.getBotByClassName("KimiBot"),
+    bots.getBotByClassName("DeepSeekAPICoderBot"),
+    bots.getBotByClassName("DeepSeekAPIChatBot"),
   ],
 };
 export default bots;
