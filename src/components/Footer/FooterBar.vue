@@ -13,6 +13,7 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
+        flex-wrap: wrap;
       "
     >
       <v-textarea
