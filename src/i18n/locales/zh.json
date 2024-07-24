@@ -238,6 +238,7 @@
     "gpt-4": "gpt-4",
     "gpt-4-turbo": "gpt-4-turbo",
     "gpt-4o": "gpt-4o",
+    "gpt-4o-mini": "gpt-4o-mini",
     "temperature": "Temperature",
     "temperaturePrompt": "Temperature 越高，生成的文本越有创造性，但也越没条理",
     "temperature0": "更具确定性",
