@@ -219,6 +219,7 @@
     "gpt-4": "gpt-4",
     "gpt-4-turbo": "gpt-4-turbo",
     "gpt-4o": "gpt-4o",
+    "gpt-4o-mini": "gpt-4o-mini",
     "temperature": "Temperature",
     "temperaturePrompt": "Temperature càng cao, văn bản càng sáng tạo nhưng càng có khả năng trở nên rời rạc",
     "temperature0": "Cụ thể hơn",
