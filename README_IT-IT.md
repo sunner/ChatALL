@@ -32,7 +32,7 @@ Gli utenti tipici di ChatALL sono:
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | No            | Sì            |                                                        |
 | [Character.AI](https://character.ai/)                                          | Sì            | No            |                                                        |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | Sì            | No            | Nessun accesso richiesto                               |
-| [ChatGPT](https://chat.openai.com)                                             | Sì            | Sì            | Navigazione Web, include servizi Azure OpenAI          |
+| [ChatGPT](https://chatgpt.com)                                             | Sì            | Sì            | Navigazione Web, include servizi Azure OpenAI          |
 | [Claude](https://www.anthropic.com/claude)                                     | Sì            | Sì            |                                                        |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Sì            | No            |                                                        |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | No            | Sì            |                                                        |
@@ -118,7 +118,7 @@ Gli utenti tipici di ChatALL sono:
 
 | AI Bots                                                       | Accesso Web   | API           | Note                                          |
 | ------------------------------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| [ChatGPT](https://chat.openai.com)                            | Sì            | Sì            | Navigazione Web, include Azure OpenAI service |
+| [ChatGPT](https://chatgpt.com)                            | Sì            | Sì            | Navigazione Web, include Azure OpenAI service |
 | [Copilot](https://copilot.microsoft.com/)                     | Sì            | No API        | Nessun accesso richiesto                      |
 | [Baidu ERNIE](https://yiyan.baidu.com/)                       | No            | Sì            |                                               |
 | [Gemini](https://gemini.google.com/)                          | Sì            | Prossimamente |                                               |

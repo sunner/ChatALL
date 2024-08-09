@@ -24,7 +24,7 @@ Auf großen Sprachmodellen (LLMs) basierende KI-Bots sind erstaunlich. Ihr Verha
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | Nein          | Ja            |                                                        |
 | [Character.AI](https://character.ai/)                                          | Ja            | Nein          |                                                        |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | Ja            | Nein          | Kein Login erforderlich                                |
-| [ChatGPT](https://chat.openai.com)                                             | Ja            | Ja            | Web-Browsing inklusive, Azure OpenAI Services          |
+| [ChatGPT](https://chatgpt.com)                                             | Ja            | Ja            | Web-Browsing inklusive, Azure OpenAI Services          |
 | [Claude](https://www.anthropic.com/claude)                                     | Ja            | Ja            |                                                        |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Ja            | Nein          |                                                        |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Nein          | Ja            |                                                        |

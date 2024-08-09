@@ -32,7 +32,7 @@ ChatALL 的典型用户是：
 | [文心一言](https://yiyan.baidu.com/)                                           | 否       | 支持     |                                            |
 | [Character.AI](https://character.ai/)                                          | 支持     | 无       |                                            |
 | [ChatGLM2 6B 和 130B](https://chatglm.cn/)                                     | 支持     | 无 API   | 不需要帐号                                 |
-| [ChatGPT](https://chat.openai.com)                                             | 支持     | 支持     | 包含 Web Browsing、Azure OpenAI service    |
+| [ChatGPT](https://chatgpt.com)                                             | 支持     | 支持     | 包含 Web Browsing、Azure OpenAI service    |
 | [Claude](https://www.anthropic.com/claude)                                     | 支持     | 支持     |                                            |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | 支持     | 无 API   |                                            |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | 否       | 支持     |                                            |

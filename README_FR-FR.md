@@ -24,7 +24,7 @@ Les robots d'intelligence artificielle basés sur les grands modèles de langage
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | Non           | Oui           |                                                   |
 | [Character.AI](https://character.ai/)                                          | Oui           | Non           |                                                   |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | Oui           | Non           | Pas besoin de compte ou de clé API                |
-| [ChatGPT](https://chat.openai.com)                                             | Oui           | Oui           | Navigation web, inclut services Azure OpenAI      |
+| [ChatGPT](https://chatgpt.com)                                             | Oui           | Oui           | Navigation web, inclut services Azure OpenAI      |
 | [Claude](https://www.anthropic.com/claude)                                     | Oui           | Oui           |                                                   |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Oui           | Non           |                                                   |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Non           | Oui           |                                                   |

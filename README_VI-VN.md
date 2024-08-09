@@ -24,7 +24,7 @@ Các Chat bots AI dựa trên Mô hình ngôn ngữ lớn (Large Language Models
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | No           | Có           |                                                       |
 | [Character.AI](https://character.ai/)                                          | Có           | Không có     |                                                       |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | Có           | Không có API | Không yêu cầu tài khoản                              |
-| [ChatGPT](https://chat.openai.com)                                             | Có           | Có           | Bao gồm cả trình duyệt Web, Azure OpenAI service       |
+| [ChatGPT](https://chatgpt.com)                                             | Có           | Có           | Bao gồm cả trình duyệt Web, Azure OpenAI service       |
 | [Claude](https://www.anthropic.com/claude)                                     | Có           | Có           |                                                       |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Có           | Không có     |                                                       |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | Không        | Có           |                                                       |

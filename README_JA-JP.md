@@ -31,7 +31,7 @@ ChatALLのユーザーはこんな感じ：
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                       | いいえ      | あり       |                                                          |
 | [Character.AI](https://character.ai/)                                         | はい        | なし       |                                                          |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                     | はい        | なし       | ログイン不要                                             |
-| [ChatGPT](https://chat.openai.com)                                            | はい        | あり       | ブラウジングを含む、Azure OpenAI service                 |
+| [ChatGPT](https://chatgpt.com)                                            | はい        | あり       | ブラウジングを含む、Azure OpenAI service                 |
 | [Claude](https://www.anthropic.com/claude)                                    | はい        | あり       |                                                          |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/)| はい        | なし       |                                                          |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                | いいえ      | はい       |                                                          |

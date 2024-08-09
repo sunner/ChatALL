@@ -32,7 +32,7 @@ ChatALL의 일반적인 사용자는 다음과 같습니다:
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | 아니오    | 예        |                                                       |
 | [Character.AI](https://character.ai/)                                          | 예        | 없음      |                                                       |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | 예        | 없음      | 로그인 필요 없음                                      |
-| [ChatGPT](https://chat.openai.com)                                             | 예        | 예        | 웹 브라우징 포함, Azure OpenAI 서비스                 |
+| [ChatGPT](https://chatgpt.com)                                             | 예        | 예        | 웹 브라우징 포함, Azure OpenAI 서비스                 |
 | [Claude](https://www.anthropic.com/claude)                                     | 예        | 예        |                                                       |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | 예        | 없음      |                                                       |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | 아니오    | 예        |                                                       |

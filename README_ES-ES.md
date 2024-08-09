@@ -32,7 +32,7 @@ Los usuarios típicos de ChatALL son:
 | [Baidu ERNIE](https://yiyan.baidu.com/)                                        | No            | Sì            |                                                        |
 | [Character.AI](https://character.ai/)                                          | Sì            | No            |                                                        |
 | [ChatGLM2 6B & 130B](https://chatglm.cn/)                                      | Sì            | No            | Nessun accesso richiesto                               |
-| [ChatGPT](https://chat.openai.com)                                             | Sì            | Sì            | Navigazione Web, include servizi Azure OpenAI          |
+| [ChatGPT](https://chatgpt.com)                                             | Sì            | Sì            | Navigazione Web, include servizi Azure OpenAI          |
 | [Claude](https://www.anthropic.com/claude)                                     | Sì            | Sì            |                                                        |
 | [Code Llama](https://ai.meta.com/blog/code-llama-large-language-model-coding/) | Sì            | No            |                                                        |
 | [Cohere Aya 23](https://cohere.com/blog/aya23)                                 | No            | Sì            |                                                        |
