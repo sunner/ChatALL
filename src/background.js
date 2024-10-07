@@ -210,8 +210,11 @@ async function createWindow() {
       "aliyun.com",
       "qianwen.aliyun.com"
     ];
-    const parsedHost = urlLib.parse(`https://${domain.startsWith(".") ? domain.substring(1) : domain}`).host;
-    return allowedDomains.includes(parsedHost);
+    const parsedHost = new URL(`https://${domain.startsWith(".") ? domain.substring(1) : domain}`).host;
+    return allowedDomains.some(
+      (allowedDomain) =>
+        parsedHost === allowedDomain || parsedHost.endsWith(`.${allowedDomain}`)
+    );
   }
 
   // Modify the Referer header for each request and special patch for some sites.
