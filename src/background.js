@@ -192,8 +192,7 @@ async function createWindow() {
           }
           // Handle the session cookie for QianWen
           if (
-            cookie.domain.startsWith(".aliyun.com") ||
-            cookie.domain.startsWith("qianwen.aliyun.com")
+            isAllowedDomain(cookie.domain)
           ) {
             newCookie.expirationDate = setCookieExpireDate(7);
           }
@@ -204,6 +203,18 @@ async function createWindow() {
       }
     },
   );
+
+  function isAllowedDomain(domain) {
+    const allowedDomains = [
+      "aliyun.com",
+      "qianwen.aliyun.com"
+    ];
+    const parsedHost = new URL(`https://${domain.startsWith(".") ? domain.substring(1) : domain}`).host;
+    return allowedDomains.some(
+      (allowedDomain) =>
+        parsedHost === allowedDomain || parsedHost.endsWith(`.${allowedDomain}`)
+    );
+  }
 
   // Modify the Referer header for each request and special patch for some sites.
   win.webContents.session.webRequest.onBeforeSendHeaders(
