@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="src/assets/logo-cover.png" width=256></img>
+  <img src="../src/assets/logo-cover.png" width=256></img>
   <p><strong>모든 AI 봇과 동시에 채팅, 최고의 제품을 찾아보세요</strong></p>
 
-[Deutsch](README_DE-DE.md) | [English](README.md) | [Español](README_ES-ES.md) | [Français](README_FR-FR.md) | [Italian](README_IT-IT.md) | [日本語](README_JA-JP.md) | 한국어 | [Русский](README_RU-RU.md) | [Tiếng Việt](README_VI-VN.md) | [简体中文](README_ZH-CN.md)
+[Deutsch](README_DE-DE.md) | [English](../README.md) | [Español](README_ES-ES.md) | [Français](README_FR-FR.md) | [Italian](README_IT-IT.md) | [日本語](README_JA-JP.md) | 한국어 | [Русский](README_RU-RU.md) | [Tiếng Việt](README_VI-VN.md) | [العربية](README_AR-AR.md)| [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TC.md)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sunner/ChatALL)
 
@@ -10,7 +10,7 @@
 
 ## 스크린샷
 
-![Screenshot](screenshots/screenshot-1.png?raw=true)
+![Screenshot](../screenshots/screenshot-1.png?raw=true)
 
 ## 기능
 

@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="src/assets/logo-cover.png" width=256></img>
+  <img src="../src/assets/logo-cover.png" width=256></img>
   <p><strong>Общайтесь со ВСЕМИ искусственными ботами одновременно, открывайте для себя лучшие</strong></p>
 
-[Deutsch](README_DE-DE.md) | [English](README.md) | [Español](README_ES-ES.md) | [Français](README_FR-FR.md) | [Italian](README_IT-IT.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | Русский | [Tiếng Việt](README_VI-VN.md) | [简体中文](README_ZH-CN.md)
+[Deutsch](README_DE-DE.md) | [English](../README.md) | [Español](README_ES-ES.md) | [Français](README_FR-FR.md) | [Italian](README_IT-IT.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | Русский | [Tiếng Việt](README_VI-VN.md) | [العربية](README_AR-AR.md)| [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TC.md)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sunner/ChatALL)
 
@@ -10,7 +10,7 @@
 
 ## Скриншоты
 
-![Скриншот](screenshots/screenshot-1.png?raw=true)
+![Скриншот](../screenshots/screenshot-1.png?raw=true)
 
 ## Возможности
 

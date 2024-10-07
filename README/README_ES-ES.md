@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="src/assets/logo-cover.png" width=256></img>
+  <img src="../src/assets/logo-cover.png" width=256></img>
   <p><strong>Chatea con TODOS los bots de IA al mismo tiempo, descubre lo mejor</strong></p>
 
-[Alemán](README_DE-DE.md) | Español | [English](README_ES-ES.md) | [Français](README_FR-FR.md) | [Italiano](README_IT-IT.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | [Русский](README_RU-RU.md) | [Tiếng Việt](README_VI-VN.md) | [简体中文](README_ZH-CN.md)
+[Deutsch](README_DE-DE.md) | [English](../README.md) | Español | [Français](README_FR-FR.md) | [Italian](README_IT-IT.md) | [日本語](README_JA-JP.md) | [한국어](README_KO-KR.md) | [Русский](README_RU-RU.md) | [Tiếng Việt](README_VI-VN.md) | [العربية](README_AR-AR.md)| [简体中文](README_ZH-CN.md) | [繁體中文](README_ZH-TC.md)
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sunner/ChatALL)
 
@@ -10,7 +10,7 @@
 
 ## Capturas de pantalla
 
-![Captura de pantalla](screenshots/screenshot-1.png?raw=true)
+![Captura de pantalla](../screenshots/screenshot-1.png?raw=true)
 
 ## Funciones
 
