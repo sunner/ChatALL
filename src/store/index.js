@@ -45,6 +45,11 @@ export default createStore({
       temperature: 0.8,
       pastRounds: 5,
     },
+    deepSeekApi: {
+      apiKey: "",
+      temperature: 1.0,
+      pastRounds: 10,
+    },
     openaiApi: {
       apiKey: "",
       temperature: 1,
@@ -212,6 +217,9 @@ export default createStore({
     },
     setChatgpt(state, refreshCycle) {
       state.chatgpt.refreshCycle = refreshCycle;
+    },
+    setDeepSeekApi(state, values) {
+      state.deepSeekApi = { ...state.deepSeekApi, ...values };
     },
     setGeminiApi(state, values) {
       state.geminiApi = { ...state.geminiApi, ...values };

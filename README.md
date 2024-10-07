@@ -39,6 +39,7 @@ Typical users of ChatALL are:
 | [Cohere Command R Models](https://cohere.com/command)                          | No          | Yes         |                                             |
 | [Copilot](https://copilot.microsoft.com/)                                      | Yes         | No API      |                                             |
 | [Dedao Learning Assistant](https://ai.dedao.cn/)                               | Coming soon | No API      |                                             |
+| [DeepSeek](https://chat.deepseek.com/)                                         | Coming soon | Yes         |                                             |
 | [Falcon 180B](https://huggingface.co/tiiuae/falcon-180B-chat)                  | Yes         | No API      |                                             |
 | [Gemini](https://gemini.google.com/)                                           | Yes         | Yes         |                                             |
 | [Gemma 2B & 7B](https://blog.google/technology/developers/gemma-open-models/)  | Yes         | No API      |                                             |
