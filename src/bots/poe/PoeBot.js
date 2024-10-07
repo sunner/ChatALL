@@ -209,6 +209,10 @@ export default class PoeBot extends Bot {
             console.debug("response", response);
           })
           .catch((error) => {
+            this.constructor._isAvailable = false;
+            if (error.code == 'ERR_BAD_REQUEST') {
+              error.message += '. Your account may be banned';
+            }
             reject(error);
           });
       } catch (error) {
