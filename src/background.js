@@ -1,5 +1,4 @@
 "use strict";
-import * as urlLib from "url";
 
 import { BrowserWindow, app, ipcMain, nativeTheme, protocol } from "electron";
 import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
